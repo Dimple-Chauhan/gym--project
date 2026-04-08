@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | Fitness AI</title>
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="profile-header">
+            <div class="user-avatar" id="userAvatar"></div>
+            <h3 id="userName" class ="hidden"></h3>
+            <span id="userLevel" class="badge"></span>
+        </div>
+
+        <div class="stats-list">
+
+            <div class="stat-item">
+                <label>BMI Status</label>
+                <p id="bmiDisplay"></p>
+            </div>
+
+            <div class="stat-item">
+                <label>Diseases</label>
+                <p id="diseaseDisplay">None</p>
+            </div>
+
+        </div>
+
+        <div class="sidebar-actions">
+
+            <!-- FIXED FILE NAME -->
+            <button onclick="location.href='profile/user-details.html'" class="btn-secondary">
+                Update Profile
+            </button>
+
+            <button id="logoutBtn" class="btn-danger">
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN DASHBOARD -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="main-header">
+
+            <!-- SIDEBAR TOGGLE -->
+            <button id="toggleSidebar" class="toggle-btn">❯</button>
+
+            <div>
+                <h2>Daily Health Tracker</h2>
+                <p id="currentDate"></p>
+            </div>
+
+        </header>
+
+
+        <!-- DAILY TRACKER -->
+        <section class="dashboard-grid">
+
+            <!-- DIET INPUT -->
+            <div class="card meal-card">
+
+                <h3>Diet Input</h3>
+                <p class="subtitle">
+                    Tell us what you ate today
+                </p>
+
+                <div class="input-group">
+
+                    <label>Breakfast / Lunch / Dinner</label>
+
+                    <textarea
+                    id="mealInput"
+                    placeholder="Example: 2 eggs, 1 bowl dal, 2 rotis..."
+                    ></textarea>
+
+                </div>
+
+                <button class="btn-primary" onclick="processDiet()">
+                    Analyze Diet with AI
+                </button>
+
+            </div>
+
+
+            <!-- AI RESULT -->
+            <div class="card ai-card">
+
+                <h3>AI Recommendation</h3>
+
+                <div id="aiOutput">
+
+                    <div class="result-placeholder">
+                        <p>
+                        Enter your diet to see calories and
+                        tomorrow's workout recommendation.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WORKOUT LEVELS -->
+        <section class="workout-section">
+
+            <h2 class="section-title">Workout Levels</h2>
+
+            <div class="workout-grid">
+
+                <!-- BASIC -->
+                <div class="workout-card basic">
+
+                    <h3>Basic Plan</h3>
+
+                    <p class="plan-desc">
+                        Perfect for beginners starting their
+                        fitness journey.
+                    </p>
+
+                    <ul>
+                        <li>Light workouts</li>
+                        <li>Basic calorie target</li>
+                        <li>Beginner friendly exercises</li>
+                    </ul>
+
+                    <button class="btn-plan" onclick="location.href='basic-plan.html'">
+                        Start Basic Plan
+                    </button>
+
+                </div>
+
+
+                <!-- INTERMEDIATE -->
+                <div class="workout-card intermediate">
+
+                    <h3>Intermediate Plan</h3>
+
+                    <p class="plan-desc">
+                        Balanced training for active users.
+                    </p>
+
+                    <ul>
+                        <li>Moderate workouts</li>
+                        <li>Strength training</li>
+                        <li>Cardio combination</li>
+                    </ul>
+
+                    <button class="btn-plan" onclick="location.href='intermediate-plan.html'">
+                        View Plan
+                    </button>
+
+                </div>
+
+
+                <!-- ADVANCED -->
+                <div class="workout-card advanced locked">
+
+                    <div class="premium-tag">
+                        Premium
+                    </div>
+
+                    <h3>Advanced Plan</h3>
+
+                    <p class="plan-desc">
+                        High intensity training with
+                        professional guidance.
+                    </p>
+
+                    <ul>
+                        <li>Personal trainer</li>
+                        <li>Custom workout plan</li>
+                        <li>Advanced calorie analysis</li>
+                    </ul>
+
+                    <button class="btn-plan locked-btn" onclick="location.href='premium.html'">
+                        Unlock Premium
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="session-section">
+
+            <h2 class="section-title">Your Booked Session</h2>
+
+            <div id="sessionCard" class="card">
+                <p>No session booked yet</p>
+            </div>
+            
+
+        </section>
+
+ 
+        <section class="tracker-section">
+
+            <h2 class="section-title">Workout Consistency Tracker</h2>
+
+            <div id="trackerGrid" class="tracker-grid"></div>
+
+            <button class="btn-primary" onclick="markWorkout()">
+                Mark Today's Workout Done
+            </button>
+
+        </section>
+        
+    </main>
+</div>
+
+<script src="../assets/js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+body{
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    background:#f4f6f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.payment-container{
+    background:white;
+    padding:30px;
+    width:320px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.amount{
+    font-weight:bold;
+    color:#007bff;
+    margin-bottom:20px;
+}
+
+.payment-methods{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.method{
+    width:30%;
+    padding:10px;
+    border-radius:8px;
+    background:#f1f1f1;
+    cursor:pointer;
+    transition:0.3s;
+    text-align:center;
+}
+
+.method img{
+    width:28px;
+}
+
+.method span{
+    display:block;
+    font-size:12px;
+}
+
+.method.active{
+    border:2px solid #007bff;
+    background:#e3f2fd;
+}
+
+.input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+.pay-btn{
+    width:100%;
+    padding:12px;
+    background:#007bff;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.pay-btn:hover{
+    background:#0056b3;
+}
+
+/* SUCCESS */
+.success-msg{
+    margin-top:15px;
+    padding:10px;
+    background:#d4edda;
+    color:#155724;
+    border-radius:6px;
+    display:none;
+}
+
+
+#errorMsg{
+    margin-top:5px;
+    min-height:18px;
+}
+
+.success-msg{
+    margin-top:15px;
+    padding:10px;
+    background:#d4edda;
+    color:#155724;
+    border-radius:6px;
+    display:none;
+    font-weight:500;
+}

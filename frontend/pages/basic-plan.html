@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Basic Workout Plan</title>
+<link rel="stylesheet" href="../assets/css/plan.css">
+
+</head>
+
+<body>
+
+<div class="plan-card">
+
+<h2>Basic Fitness Plan</h2>
+<p>Perfect for beginners starting their fitness journey.</p>
+
+<h3>Daily Calorie Target</h3>
+<p>1800 kcal</p>
+
+<h3>Men Workout Plan</h3>
+
+<table>
+<tr><th>Day</th><th>Workout</th></tr>
+<tr><td>Monday</td><td>10 Pushups, 15 Squats</td></tr>
+<tr><td>Tuesday</td><td>15 Jumping Jacks, 15 Min Walk</td></tr>
+<tr><td>Wednesday</td><td>10 Sit-ups, 10 Pushups</td></tr>
+<tr><td>Thursday</td><td>15 Squats, 15 Min Walk</td></tr>
+<tr><td>Friday</td><td>10 Pushups, 15 Jumping Jacks</td></tr>
+</table>
+
+<h3>Women Workout Plan</h3>
+
+<table>
+<tr><th>Day</th><th>Workout</th></tr>
+<tr><td>Monday</td><td>5 Pushups, 10 Squats</td></tr>
+<tr><td>Tuesday</td><td>10 Jumping Jacks, 10 Min Walk</td></tr>
+<tr><td>Wednesday</td><td>5 Sit-ups, 5 Pushups</td></tr>
+<tr><td>Thursday</td><td>10 Squats, 10 Min Walk</td></tr>
+<tr><td>Friday</td><td>5 Pushups, 10 Jumping Jacks</td></tr>
+</table>
+
+
+<button class="btn-primary" onclick="history.back()">
+Back to Dashboard
+</button>
+
+</div>
+
+</body>
+</html>
+
+<script>
+
+const intensity = localStorage.getItem("intensity");
+
+const list = document.querySelector("ul");
+
+if(intensity === "high"){
+    list.innerHTML += "<li>+ 10 min extra cardio</li>";
+}
+else if(intensity === "low"){
+    list.innerHTML += "<li>+ Light stretching</li>";
+}
+
+</script>

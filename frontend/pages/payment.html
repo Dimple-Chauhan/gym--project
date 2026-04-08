@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Payment</title>
+<link rel="stylesheet" href="../assets/css/payment.css">
+</head>
+
+<body>
+
+<div class="payment-container">
+
+    <h2>Complete Payment</h2>
+    <p class="amount">Amount: ₹500</p>
+
+    <!-- METHODS -->
+    <div class="payment-methods">
+
+        <div class="method active">
+            <img src="../assets/images/upi.png">
+            <span>UPI</span>
+        </div>
+
+        <div class="method">
+            <img src="../assets/images/card.png">
+            <span>Card</span>
+        </div>
+
+        <div class="method">
+            <img src="../assets/images/bank.png">
+            <span>Net Banking</span>
+        </div>
+
+    </div>
+
+    <!-- INPUT -->
+    <input type="text" id="upi" placeholder="Enter UPI ID (example@upi)" class="input">
+    <input type="password" id="pin" placeholder="Enter UPI PIN" class="input">
+    <p id="errorMsg" style="color:red; font-size:13px;"></p>
+    <!-- BUTTON -->
+    <button class="pay-btn" onclick="completePayment()">
+        Pay ₹500
+    </button>
+
+    <!-- SUCCESS UI -->
+    <div id="successMsg" class="success-msg">
+        ✅ Payment Successful!
+    </div>
+
+</div>
+
+<script src="../assets/js/payment.js"></script>
+
+</body>
+</html>

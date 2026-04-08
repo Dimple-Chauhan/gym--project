@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Health Setup</title>
+    <link rel="stylesheet" href="../../assets/css/profile.css">
+</head>
+
+<body>
+
+<div class="health-container">
+
+    <h2>Complete Your Health Profile</h2>
+
+    <form id="healthForm">
+
+        <!-- AGE -->
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input 
+                type="number"
+                id="age"
+                min="10"
+                max="70"
+                required
+            >
+        </div>
+
+
+        <!-- HEIGHT -->
+        <div class="form-group">
+            <label for="height">Height (cm)</label>
+            <input 
+                type="number"
+                id="height"
+                max="270"
+                placeholder="e.g. 170"
+                required
+            >
+        </div>
+
+
+        <!-- WEIGHT -->
+        <div class="form-group">
+            <label for="weight">Weight (kg)</label>
+            <input 
+                type="number"
+                id="weight"
+                placeholder="e.g. 65"
+                required
+            >
+        </div>
+
+
+        <!-- DISEASE SECTION -->
+        <div class="form-group">
+
+            <label>Select Diseases (if any)</label>
+
+            <div class="disease-group">
+
+                <label class="disease-item">
+                    <input type="checkbox" name="disease" value="diabetes">
+                    Diabetes
+                </label>
+
+                <label class="disease-item">
+                    <input type="checkbox" name="disease" value="hypothyroidism">
+                    Hypothyroidism
+                </label>
+
+                <label class="disease-item">
+                    <input type="checkbox" name="disease" value="hyperthyroidism">
+                    Hyperthyroidism
+                </label>
+
+                <label class="disease-item">
+                    <input type="checkbox" name="disease" value="hypertension">
+                    High Blood Pressure
+                </label>
+
+                <label class="disease-item">
+                    <input type="checkbox" name="disease" value="pcos">
+                    PCOS / Hormonal Disorder
+                </label>
+
+                <label class="disease-item">
+                    <input type="checkbox" name="disease" value="none">
+                    None
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- BMI RESULT -->
+        <p id="bmiResult"></p>
+
+
+        <!-- SUBMIT BUTTON -->
+        <button type="submit">
+            Save & Continue
+        </button>
+
+    </form>
+
+</div>
+
+<script src="../../assets/js/profile.js"></script>
+
+</body>
+</html>
