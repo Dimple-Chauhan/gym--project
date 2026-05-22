@@ -30,7 +30,7 @@ function completePayment(){
     const session = JSON.parse(localStorage.getItem("pendingSession"));
     const token = localStorage.getItem("token"); // ✅ IMPORTANT
 
-    fetch("http://localhost:5000/api/session/book", {
+    fetch("/api/session/book", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

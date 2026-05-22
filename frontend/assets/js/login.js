@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = document.getElementById("email").value.trim().toLowerCase();
         const password = document.getElementById("password").value;
 
-        fetch("http://localhost:5000/api/auth/login", {
+        fetch("/api/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

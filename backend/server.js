@@ -6,7 +6,7 @@ const path = require("path");
 
 const app = express();
 
-// ✅ MIDDLEWARES (ORDER IS IMPORTANT)
+// ✅ MIDDLEWARES
 app.use(cors());
 app.use(express.json());
 
@@ -27,12 +27,11 @@ app.use("/api/session", sessionRoutes);
 connectDB();
 
 // ✅ TEST ROUTE
-app.get("/", (req,res)=>{
-    res.send("Gym Backend Running");
+app.get("/{*path}", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/index.html"));
 });
 
 // ✅ SERVER START
-
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

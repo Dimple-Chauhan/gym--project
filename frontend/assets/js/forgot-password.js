@@ -18,7 +18,7 @@ if(newPassword !== confirmPassword){
 }
 
 // ✅ SEND TO BACKEND
-fetch("http://localhost:5000/api/auth/forgot-password",{
+fetch("/api/auth/forgot-password",{
     method:"POST",
     headers:{
         "Content-Type":"application/json"

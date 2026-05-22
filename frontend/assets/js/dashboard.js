@@ -90,7 +90,7 @@ function loadUser(){
         avatarEl.classList.remove("hidden");
     //}
 
-    fetch("http://localhost:5000/api/auth/profile",{
+    fetch("/api/auth/profile",{
         method:"GET",
         headers:{
             "Authorization": token
@@ -130,7 +130,7 @@ function loadProfileData(){
 
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/api/auth/profile",{
+    fetch("/api/auth/profile",{
         method:"GET",
         headers:{
             "Authorization": token
@@ -227,7 +227,7 @@ function processDiet(){
         return;
     }
 
-    fetch("http://localhost:5000/api/ai/analyze",{
+    fetch("/api/ai/analyze",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -358,7 +358,7 @@ function loadBookedSession(){
     const token = localStorage.getItem("token");
     const card = document.getElementById("sessionCard");
 
-    fetch("http://localhost:5000/api/session/my", {
+    fetch("/api/session/my", {
         headers: {
             "Authorization": token
         }
@@ -400,7 +400,7 @@ function cancelSession(sessionId){
 
     if(!confirm("Cancel this session?")) return;
 
-    fetch(`http://localhost:5000/api/session/cancel/${sessionId}`, {
+    fetch(`/api/session/cancel/${sessionId}`, {
         method: "DELETE",
         headers: {
             "Authorization": token

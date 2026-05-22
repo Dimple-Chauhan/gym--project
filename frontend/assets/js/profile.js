@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const token = localStorage.getItem("token");
 
-        fetch("http://localhost:5000/api/auth/profile", {
+        fetch("/api/auth/profile", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (data.success) {
                 //alert("Profile saved successfully");
-                window.location.href = "../dashboard.html";
+                window.location.href = "dashboard.html";
             } else {
                 alert(data.message);
             }
