@@ -219,6 +219,7 @@ function setupLogout(){
 // =============================
 function processDiet(){
 
+    const btn = document.getElementById("analyzeBtn");
     const mealInput = document.getElementById("mealInput").value;
     const output = document.getElementById("aiOutput");
 
@@ -226,6 +227,10 @@ function processDiet(){
         alert("Please enter your meal");
         return;
     }
+
+    // BUTTON LOADING STATE
+    btn.textContent = "Analyzing...";
+    btn.disabled = true;
 
     fetch("/api/ai/analyze",{
         method:"POST",
@@ -238,6 +243,9 @@ function processDiet(){
     })
     .then(res=>res.json())
     .then(data => {
+
+        btn.textContent = "Analyze Diet with AI";
+        btn.disabled = false;
 
         if(data.success){
 
@@ -255,11 +263,12 @@ function processDiet(){
             `;
 
             localStorage.setItem("intensity", data.intensity.toLowerCase());
-
         }
 
     })
     .catch(()=>{
+        btn.textContent = "Analyze Diet with AI";
+        btn.disabled = false;
         output.innerHTML = "Server error";
     });
 
